@@ -1,10 +1,14 @@
 import { Link, NavLink } from 'react-router-dom';
 import s from './Header.module.css';
 
-export const Header: React.FC = () => {
-  const getActiveClass = ({ isActive }: { isActive: boolean }) =>
-    isActive ? `${s.active} ${s.header__navItem}` : s.header__navItem;
+const scrollToSection = (id: string) => {
+  const section = document.querySelector(id);
+  if (section) {
+    section.scrollIntoView();
+  }
+};
 
+export const Header: React.FC = () => {
   return (
     <header className={s.header}>
       <div className="container">
@@ -14,15 +18,24 @@ export const Header: React.FC = () => {
           </div>
 
           <nav className={s.header__nav}>
-            <NavLink to="/about-us" className={getActiveClass}>
+            <span
+              onClick={() => scrollToSection('#about-us')}
+              className={s.header__navLink}
+            >
               About us
-            </NavLink>
-            <NavLink to="/neighborhoods" className={getActiveClass}>
+            </span>
+            <span
+              onClick={() => scrollToSection('#neighborhoods')}
+              className={s.header__navLink}
+            >
               Neighborhoods
-            </NavLink>
-            <NavLink to="/contact-us" className={getActiveClass}>
+            </span>
+            <span
+              onClick={() => scrollToSection('#contact-us')}
+              className={s.header__navLink}
+            >
               Contact us
-            </NavLink>
+            </span>
           </nav>
 
           <div className={s.header__authorization}>

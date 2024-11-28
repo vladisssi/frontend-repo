@@ -2,6 +2,7 @@ import './styles/reset.css';
 import './styles/common.css';
 import { Header } from './components/header/Header';
 import { Outlet } from 'react-router';
+import { Footer } from './components/footer/Footer';
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
         <Outlet />
       </main>
 
-      <footer>footer</footer>
+      <Footer />
     </div>
   );
 }
