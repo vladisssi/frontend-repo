@@ -1,0 +1,27 @@
+.neighborhoods {
+  margin-bottom: 104px;
+}
+
+.neighborhoods__text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 40px;
+}
+
+.neighborhoods__title {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 32.4px;
+
+  margin-bottom: 8px;
+}
+
+.neighborhoods__description {
+  color: #858585;
+
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 22.95px;
+}

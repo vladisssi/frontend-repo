@@ -61,10 +61,34 @@ export const Footer: React.FC = () => {
                 <div className={s.follow__title}>Follow Us</div>
 
                 <div className={s.follow__icons}>
-                  <img src={InstagramIcon} alt="InstagramIcon" />
-                  <img src={LinkedInIcon} alt="LinkedInIcon" />
-                  <img src={FacebookIcon} alt="FacebookIcon" />
-                  <img src={PinterestIcon} alt="PinterestIcon" />
+                  <a href="#">
+                    <img
+                      src={InstagramIcon}
+                      alt="InstagramIcon"
+                      className={s.socialIcon}
+                    />
+                  </a>
+                  <a href="#">
+                    <img
+                      src={LinkedInIcon}
+                      alt="LinkedInIcon"
+                      className={s.socialIcon}
+                    />
+                  </a>
+                  <a href="#">
+                    <img
+                      src={FacebookIcon}
+                      alt="FacebookIcon"
+                      className={s.socialIcon}
+                    />
+                  </a>
+                  <a href="#">
+                    <img
+                      src={PinterestIcon}
+                      alt="PinterestIcon"
+                      className={s.socialIcon}
+                    />
+                  </a>
                 </div>
               </div>
             </div>

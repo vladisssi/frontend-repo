@@ -1,20 +1,38 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import s from './SearchComponent.module.css';
 import searchIcon from '../../../public/img/icons/searchIcon.svg';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export const SearchComponent: React.FC = () => {
+  const location = useLocation();
   const [query, setQuery] = useState('');
+  const [activePage, setActivePage] = useState<'buy' | 'rent' | ''>('buy');
+
+  useEffect(() => {
+    if (location.pathname.includes('buy')) {
+      setActivePage('buy');
+    } else if (location.pathname.includes('rent')) {
+      setActivePage('rent');
+    } else {
+      setActivePage('');
+    }
+  }, [location]);
 
   return (
     <section className={s.section}>
       <h1 className={s.section__title}>Explore the Best of Amsterdam Living</h1>
 
       <div className={s.section__toggleBtn}>
-        <NavLink to="/" className={s.buy}>
+        <NavLink
+          to="/buy"
+          className={`${s.buy} ${activePage === 'buy' ? s.pseudo : ''}`}
+        >
           Buy
         </NavLink>
-        <NavLink to="/" className={s.rent}>
+        <NavLink
+          to="/rent"
+          className={`${s.rent} ${activePage === 'rent' ? s.pseudo : ''}`}
+        >
           Rent
         </NavLink>
       </div>
